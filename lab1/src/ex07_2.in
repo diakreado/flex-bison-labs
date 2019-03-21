@@ -1,0 +1,16 @@
+int main()
+{
+    unsigned int n;
+    unsigned long long factorial = 1;
+
+    /*
+    unsigned int x;
+    factorial
+    **/
+
+    int hexVar = 7Ah;
+    return 0;
+
+    /*
+        some text
+}

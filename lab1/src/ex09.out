@@ -1,0 +1,5 @@
+identifier: reader
+identifier: ready
+operation: read
+identifier: forread
+identifier: red

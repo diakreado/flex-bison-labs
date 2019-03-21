@@ -1,0 +1,24 @@
+ident: int
+ident: main
+
+
+ident: unsigned
+ident: int
+ident: n
+
+ident: unsigned
+ident: long
+ident: long
+ident: factorial
+decimal: 1
+
+
+
+
+ident: int
+ident: hexVar
+hex: 7Ah
+
+ident: return
+decimal: 0
+
