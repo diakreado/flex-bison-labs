@@ -1,21 +1,20 @@
 %{
-void handler();
+void handler(int lenOfElement, int massOfOne);
 %}   
 
     int mass = 0;
     int isTrue = 1;
 
 %%
-H[0-9]?(", "|"\n") handler();
+H[2-9]?(", "|"\n") handler(1, 1);
 
-
-C[0-9]?(", "|"\n") handler();
-N[0-9]?(", "|"\n") handler();
-O[0-9]?(", "|"\n") handler();
-SI[0-9]?(", "|"\n") handler();
-S[0-9]?(", "|"\n") handler();
-CL[0-9]?(", "|"\n") handler();
-SN[0-9]?(", "|"\n") handler();
+C[2-9]?(", "|"\n") handler(1, 12);
+N[2-9]?(", "|"\n") handler(1, 14);
+O[2-9]?(", "|"\n") handler(1, 16);
+SI[2-9]?(", "|"\n") handler(2, 28);
+S[2-9]?(", "|"\n") handler(1, 32);
+CL[2-9]?(", "|"\n") handler(2, 35);
+SN[2-9]?(", "|"\n") handler(2, 118);
 
 \n { 
     if (!isTrue) {
@@ -31,8 +30,12 @@ SN[0-9]?(", "|"\n") handler();
 . { ECHO; printf("!"); isTrue = 0; }
 %%
 
-void handler() {
-    mass+=1;
+void handler(int lenOfElement, int massOfOne) {
+    if (yytext[lenOfElement] > 49 && yytext[lenOfElement] < 58) {
+        mass += massOfOne * (yytext[lenOfElement] - 48 );
+    } else {
+        mass += massOfOne;
+    }
     if (yytext[yyleng-1] == 10) {
         for (int i=0; i<yyleng-1; i++) {
             printf("%c",yytext[i]);
