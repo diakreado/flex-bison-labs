@@ -3,9 +3,12 @@
 *.log
 *.synctex.gz
 *.fls
+*.output
 
 ex??
 ex??_?
 indiv
 
 *.c
+*.h
+a.out

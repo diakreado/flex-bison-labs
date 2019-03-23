@@ -1,0 +1,147 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\section{Цель работы}
+\begin{itemize}
+\item Познакомиться с языком синтаксического разбора $yacc$
+\item Выполнить трансляцию предложенных программ на языке $yacc$. Протестировать их работу.
+\end{itemize}
+
+
+\section{Ход работы}
+
+\subsection{Проверка формата даты}
+
+    Используемая программа:
+    \lstinputlisting {src/_date/v1/v1.y}
+    \lstinputlisting {src/_date/v1/v1.l}
+
+    Сгенерированный файл:
+    \lstinputlisting {src/_date/v1/zz.c}
+
+    Входные данные:
+    \lstinputlisting {src/_date/v1/test.in}
+
+    Программа отработала корректно. 
+    Так как ошибок обнаружено не было,
+    то вывод программы тоже оказался пустым.
+
+    Входные данные были модифицированы:
+    \lstinputlisting {src/_date/v1/test1.in}
+
+    В итоге, в консоль было выведено сообщение $?-syntax error$.
+    Что сведетельствует, о несоответствии входных данных
+    разработаному шаблону формата даты.
+
+\subsection{Изменение структуры ввода даты}
+
+    Программа приведенная в предыдущем задании была модифицирована:
+    \lstinputlisting {src/_date/v2/v2.y}
+    \lstinputlisting {src/_date/v2/v2.l}
+
+    Входные данные, которые привели к успешному завершению:
+    \lstinputlisting {src/_date/v2/test.in}
+
+    Входные данные, которые привели к ошибке:
+    \lstinputlisting {src/_date/v2/test1.in}
+
+
+\subsection{Доступ к семантическим значениям}
+
+    Используемая программа:
+    \lstinputlisting {src/_date/v3/a/v3a.y}
+    \lstinputlisting {src/_date/v3/a/v3.l}
+
+    На вход программы было подано:
+    \lstinputlisting {src/_date/v3/a/test1.in}
+
+    В итоге получили:
+    \lstinputlisting {src/_date/v3/a/test1.out}
+
+    Следовательно можно сделать вывод, что программа отработала корректно.
+
+
+\subsection{Проверка даты и вывод количества дней от 1970 г.}
+
+    Используемая программа:
+    \lstinputlisting {src/_date/v3/b/v3b.y}
+    \lstinputlisting {src/_date/v3/b/v3.l}
+
+    На вход программы было подано:
+    \lstinputlisting {src/_date/v3/b/test.in}
+
+    В итоге получили:
+    \lstinputlisting {src/_date/v3/b/test.out}
+
+    Следовательно можно сделать вывод, что программа отработала корректно.
+
+
+\subsection{Семантическое значение date и вычисление разницы между датами}
+
+    Используемая программа:
+    \lstinputlisting {src/_date/v3/d/v3c.y}
+    \lstinputlisting {src/_date/v3/d/v3.l}
+
+    На вход программы было подано:
+    \lstinputlisting {src/_date/v3/d/test.in}
+
+    В итоге получили:
+    \lstinputlisting {src/_date/v3/d/test.out}
+
+    Следовательно можно сделать вывод, что программа отработала корректно.
+
+\subsection{Определение сопутствующего типа значения нескольких типов}
+
+    Используемая программа:
+    \lstinputlisting {src/_date/v5/v5.y}
+    \lstinputlisting {src/_date/v5/v5.l}
+
+    На вход программы было подано:
+    \lstinputlisting {src/_date/v5/test.in}
+
+    В итоге получили:
+    \lstinputlisting {src/_date/v5/test.out}
+
+    Следовательно можно сделать вывод, что программа отработала корректно.
+
+
+\subsection{Рекурсивные правила}
+
+    Используемая программа:
+    \lstinputlisting {src/list/v0/c1.y}
+    \lstinputlisting {src/list/v0/c1.l}
+
+    На вход программы было подано:
+    \lstinputlisting {src/list/v0/test.in}
+
+    В итоге получили:
+    \lstinputlisting {src/list/v0/test.out}
+
+    Следовательно можно сделать вывод, что программа отработала корректно.
+
+
+\subsection{Использование рекурсии при чтении списка}
+
+    Используемая программа:
+    \lstinputlisting {src/list/v1/c1.y}
+    \lstinputlisting {src/list/v1/c.l}
+
+    На вход программы было подано:
+    \lstinputlisting {src/list/v1/test.in}
+
+    В итоге получили:
+    \lstinputlisting {src/list/v1/test.out}
+
+    Следовательно можно сделать вывод, что программа отработала корректно.
+
+
+\subsection{Дополнительное микрозадание}
+
+
+\section{Вывод}
+
+
+\end{document}
