@@ -1,26 +1,34 @@
-%token NUM CONDITION BODY DEFINITION WHILE_KEY
-%start __list
+%token NUM CONDITION BODY DEF_INT WHILE_KEY VARIABLE EOL
+%start commands
 
 
 %%
-__list: _list
+commands: definition ';' EOL commands { printf("!!!"); }
+          | while_cycle
+          ;
 
-_list: /* empty */  { $$ = 0; }
-      | list        
-      ;
+definition: DEF_INT VARIABLE
+            | DEF_INT VARIABLE '=' expression
+            ;
 
-list: NUM               {  }           
-    | list ',' NUM      {  }
-    | list '\n'         { print($$); $$ = $1 + 1; }
-    | list NUM          {  }    
-    ;
+while_cycle: WHILE_KEY '(' expression ')'
+             ;
+
+
+expression: NUM
+            | VARIABLE
+            | expression '+' expression    
+            | expression '-' expression    
+            | expression '*' expression    
+            | expression '/' expression            
+            ;
 %%
 
 int numOfValues = 0;
 int numOfNegativeValues = 0;
 
 print (int numOfStr) {
-  printf("%d : all = %d , neg = %d \n", numOfStr, numOfValues, numOfNegativeValues);
+    printf("%d : all = %d , neg = %d \n", numOfStr, numOfValues, numOfNegativeValues);
 }
 
 

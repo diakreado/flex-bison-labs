@@ -1,7 +1,2 @@
-DEF-int sum_1 = 0;-DEF
-WHILE-while (sum - 1000 + 1)-WHILE 
-open-{
-OPER-    sum = sum + 1;-OPER
-
-OPER-    lol = pol_Lka + 10 + 4 + sum;-OPER
-}-close
+int sum_1=1123+1;
+while(sum-1000+1)!!!
