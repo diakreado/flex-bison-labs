@@ -3,7 +3,7 @@ rm -f y.* lex.yy.c lol
 #yacc -d *.y  
 yacc -vtd *.y
 #lex: option -s to supress default action ECHO
-lex -s c.l
+lex -s *.l
 cc *.c -o lol
 
 echo "--------------------------------------------------------"

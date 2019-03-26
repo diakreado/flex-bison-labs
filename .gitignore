@@ -8,12 +8,15 @@
 ex??
 ex??_?
 indiv
+lol
 
 *.c
 *.h
 a.out
 
 .vscode
+
+report.out
 
 !zz.c
 !symbols.h
