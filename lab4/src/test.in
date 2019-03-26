@@ -1,0 +1,7 @@
+int sum = 1;
+while (sum - 10)
+{
+    sum ++ ;
+    sum +=2 ;
+    sum = sum +5+1 ;
+}

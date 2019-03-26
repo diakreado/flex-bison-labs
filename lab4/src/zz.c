@@ -17,5 +17,10 @@ yyerror (char *s)
 
 main () 
 { 
-	return yyparse(); 
+	printf("push rbp\n");
+	printf("mov rbp, rsp\n");
+	int ret = yyparse(); 
+	printf("pop rbp\n");
+	printf("ret\n");
+	return ret;
 }

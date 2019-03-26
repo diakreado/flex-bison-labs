@@ -13,20 +13,24 @@ D [0-9]+
 "/" |
 "=" |
 ";" |
+"{" |
+"}" |
 "(" |
-")" { ECHO; return yytext[0]; }
+")" { return yytext[0]; }
 
-"while" { ECHO; return WHILE_KEY; }
+"while" { return WHILE_KEY; }
 
-"int "  { ECHO; return DEF_INT; }
+"int "  { return DEF_INT; }
 
-{VAR}   { ECHO; return VARIABLE; }
+{VAR}   { yylval.text = strdup(yytext); return VARIABLE; }
 
-{D}     { ECHO; return NUM; }
+{D}     { yylval.ival = atoi(yytext); return NUM; }
+
+(\n)    { return EOL; }
 
 [ \t]   { }
-(\n)    { ECHO; return EOL; }
 (.)     { }
+
 %%
 
 #ifndef yywrap

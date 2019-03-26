@@ -16,3 +16,4 @@ a.out
 .vscode
 
 !zz.c
+!symbols.h
