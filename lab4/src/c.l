@@ -26,6 +26,8 @@ D [0-9]+
 
 {D}     { yylval.ival = atoi(yytext); return NUM; }
 
+"main()" {yylval.text = strdup(yytext); return FUNC_MAIN; }
+
 (\n)    { return EOL; }
 
 [ \t]   { }
@@ -36,11 +38,3 @@ D [0-9]+
 #ifndef yywrap
 int yywrap () { return 1; }
 #endif
-
-
-// "int"[ ]+{VAR}([ ]*=[ ]*{D})?";" { printf("DEF-"); ECHO; printf("-DEF"); }
-// "while ("([a-zA-Z0-9 +-]+)")" { printf("WHILE-"); ECHO; printf("-WHILE "); }
-// "{" { printf("open-"); ECHO; }
-// ([ ]+)?{VAR}[ ]*=([ ]*({VAR}|{D})[ ]*([+-])?)+[ ]*";" { printf("OPER-"); ECHO; printf("-OPER"); }
-// "}" { ECHO; printf("-close"); }
-// (\n) { ECHO; }

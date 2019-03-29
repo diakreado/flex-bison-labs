@@ -1,0 +1,41 @@
+push rbp
+mov rbp, rsp
+mov DWORD PTR [rbp-4], 0
+mov DWORD PTR [rbp-8], 26
+mov DWORD PTR [rbp-12], 1
+.L2D0:
+cmp DWORD PRT [rbp-4], 10
+je .L1D0
+mov edx, DWORD PTR [rbp-8]
+mov eax, DWORD PTR [rbp-4]
+sub eax, edx
+mov DWORD PTR [rbp-12], eax
+mov eax, DWORD PTR [rbp-8]
+DWORD PTR [rbp-4], eax
+.L4D0:
+cmp DWORD PRT [rbp-8], 100
+je .L3D0
+mov edx, DWORD PTR [rbp-8]
+mov eax, DWORD PTR [rbp-4]
+sub eax, edx
+mov DWORD PTR [rbp-12], eax
+mov eax, DWORD PTR [rbp-8]
+DWORD PTR [rbp-4], eax
+jmp .L4D0
+.L3D0:
+jmp .L2D0
+.L1D0:
+.L2D1:
+cmp DWORD PRT [rbp-8], 100
+je .L1D1
+mov edx, DWORD PTR [rbp-8]
+mov eax, DWORD PTR [rbp-4]
+sub eax, edx
+mov DWORD PTR [rbp-12], eax
+mov eax, DWORD PTR [rbp-8]
+DWORD PTR [rbp-4], eax
+jmp .L2D1
+.L1D1:
+mov eax, 0
+pop rbp
+ret

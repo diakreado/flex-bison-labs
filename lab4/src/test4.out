@@ -1,0 +1,5 @@
+push rbp
+mov rbp, rsp
+mov DWORD PTR [rbp-4], 0
+add DWORD PTR [rbp-4], 1
+ERROR: 'sum4' was not declared in this scope 

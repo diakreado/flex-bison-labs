@@ -20,3 +20,6 @@ report.out
 
 !zz.c
 !symbols.h
+
+!vector.c
+!vector.h

@@ -20,6 +20,7 @@ main ()
 	printf("push rbp\n");
 	printf("mov rbp, rsp\n");
 	int ret = yyparse(); 
+	printf("mov eax, 0\n");
 	printf("pop rbp\n");
 	printf("ret\n");
 	return ret;

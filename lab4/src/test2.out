@@ -1,0 +1,4 @@
+push rbp
+mov rbp, rsp
+mov DWORD PTR [rbp-4], 0
+ERROR: redeclaration of 'sum' 

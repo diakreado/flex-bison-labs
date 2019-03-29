@@ -1,0 +1,21 @@
+int main() {
+    int sum = 0;
+    int sum1 = 25+1;
+    int sum2 = 1;
+    while (sum - 10)
+    {
+        sum2 = sum1 - sum;
+        sum = sum1;
+        while (sum1 - 100)
+        {
+            sum2 = sum1 - sum;
+            sum = sum1;
+        }
+    }
+    
+    while (sum1 - 100)
+    {
+            sum2 = sum1 - sum;
+            sum = sum1;
+    }
+}
